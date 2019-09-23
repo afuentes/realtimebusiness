@@ -1,7 +1,7 @@
 # Real Time Business
 Real Time Business Technology Stack Demo 
 
-## Prepared Enviroment  
+## Prepared Enviroment ( MacOs ) 
 
 1- Install Tools https://quarkus.io/get-started/
 
@@ -9,6 +9,16 @@ Real Time Business Technology Stack Demo
 * Download JDK from https://adoptopenjdk.net/ ( Download for macOS x64 - Version OpenJDK 8 JVM - Open J9 )
 * Download Maven https://maven.apache.org/
 * Download JDK from https://adoptopenjdk.net/ 
+
+Enviroment Profile .bash_profile 
+
+```
+# PROJECT 
+export PROJECT_TOOLS=$HOME/realtimebusiness/tools
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8-openj9.jdk/Contents/Home/ 
+export MAVEN_HOME=${PROJECT_TOOLS}/apache-maven-3.6.2
+export PATH=${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${PATH}
+```
 
 2. Create the first Project with Quarkus 
 
