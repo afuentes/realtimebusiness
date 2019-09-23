@@ -1,6 +1,5 @@
-# realtimebusiness
-Real Time Business Technology 
-
+# Real Time Business
+Real Time Business Technology Stack
 
 ## Prepared Enviroment  
 
