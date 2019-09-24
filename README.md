@@ -25,7 +25,7 @@ export PATH=${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${PATH}
 
 https://quarkus.io/guides/application-configuration-guide
 
-```
+```script
 $ mvn io.quarkus:quarkus-maven-plugin:0.22.0:create \
 >     -DprojectGroupId=org.acme \
 >     -DprojectArtifactId=application-configuration \
@@ -41,7 +41,7 @@ hello
 
 Modified the return String into method hello
 
-```
+```java
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
@@ -50,7 +50,7 @@ Modified the return String into method hello
 ```
 The test in other 
 
-```
+```scipt
 curl http://localhost:8080/greeting
 helloworldfirst
 ```
