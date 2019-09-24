@@ -36,8 +36,26 @@ $ curl http://localhost:8080/greeting
 hello
 
 ```
+3. Update the Project using VSCode 
 
-3. Develop a Simple Application 
+Modified the return String into method hello
+
+```
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String hello() {
+        return "helloworldfirst\n";
+    }
+```
+The test in other 
+
+```
+curl http://localhost:8080/greeting
+helloworldfirst
+```
+Note: quarkus:dev enables hot deployment with background compilation, which means that when you modify your Java files or your resource files and refresh your browser these changes will automatically take effect. 
+
+4. Develop a Simple Application 
 
 ### Reference
 
