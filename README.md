@@ -1,7 +1,8 @@
 # Real Time Business
-Real Time Business Technology Stack Demo 
 
-## Prepared Enviroment ( MacOs ) 
+Real Time Business strategic to support UXTime approach
+
+## Prepared Enviroment for  
 
 1- Install Tools https://quarkus.io/get-started/
 
