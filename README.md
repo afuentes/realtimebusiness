@@ -2,7 +2,7 @@
 
 Real Time Business strategic to support **UXTime** approach
 
-## Prepared Enviroment for  
+## Prepared Enviroment
 
 1- Install Tools https://quarkus.io/get-started/
 
@@ -55,6 +55,9 @@ curl http://localhost:8080/greeting
 helloworldfirst
 ```
 **Note**: quarkus:dev enables hot deployment with background compilation, which means that when you modify your Java files or your resource files and refresh your browser these changes will automatically take effect. 
+
+
+## Develop Real Time Demo 
 
 4. Develop a Simple Application 
 
