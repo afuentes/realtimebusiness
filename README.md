@@ -48,7 +48,7 @@ Modified the return String into method hello
         return "helloworldfirst\n";
     }
 ```
-The test in other 
+validate the modify code 
 
 ```javascript
 curl http://localhost:8080/greeting
