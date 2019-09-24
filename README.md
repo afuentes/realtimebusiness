@@ -13,7 +13,7 @@ Real Time Business strategic to support UXTime approach
 
 Enviroment Profile .bash_profile 
 
-```
+```javascript
 # PROJECT 
 export PROJECT_TOOLS=$HOME/realtimebusiness/tools
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8-openj9.jdk/Contents/Home/ 
@@ -25,7 +25,7 @@ export PATH=${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${PATH}
 
 https://quarkus.io/guides/application-configuration-guide
 
-```script
+```javascript
 $ mvn io.quarkus:quarkus-maven-plugin:0.22.0:create \
 >     -DprojectGroupId=org.acme \
 >     -DprojectArtifactId=application-configuration \
@@ -50,11 +50,11 @@ Modified the return String into method hello
 ```
 The test in other 
 
-```scipt
+```javascript
 curl http://localhost:8080/greeting
 helloworldfirst
 ```
-Note: quarkus:dev enables hot deployment with background compilation, which means that when you modify your Java files or your resource files and refresh your browser these changes will automatically take effect. 
+**Note**: quarkus:dev enables hot deployment with background compilation, which means that when you modify your Java files or your resource files and refresh your browser these changes will automatically take effect. 
 
 4. Develop a Simple Application 
 
