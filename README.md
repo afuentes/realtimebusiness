@@ -1,6 +1,6 @@
 # Real Time Business
 
-Real Time Business strategic to support **UXTime** approach
+Event Stream Platform 
 
 ## Prepared Enviroment
 
