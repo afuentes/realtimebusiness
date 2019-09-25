@@ -64,3 +64,4 @@ helloworldfirst
 ### Reference
 
 * https://quarkus.io/get-started/ 
+* https://quarkus.io/guides/kafka-guide
