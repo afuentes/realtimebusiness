@@ -8,7 +8,7 @@
 
 $ brew install python3
 $ pip3 install --upgrade pip
-$ pip3 install tensorflow==2.0.0-rc1 
+$ pip3 install tensorflow==2.0
 ```
 
 # Reference
