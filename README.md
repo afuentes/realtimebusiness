@@ -62,6 +62,7 @@ helloworldfirst
 4. Develop a Simple Application 
 
 ### Reference
+* https://kafka.apache.org/
 * https://queue.acm.org/detail.cfm?id=3321612
 * https://quarkus.io/get-started/ 
 * https://quarkus.io/guides/kafka-guide
