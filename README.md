@@ -1,6 +1,6 @@
 # Real Time Business
 
-Event Stream Platform 
+Online Event Processing Platform
 
 ## Prepared Enviroment
 
@@ -62,7 +62,7 @@ helloworldfirst
 4. Develop a Simple Application 
 
 ### Reference
-
+* https://queue.acm.org/detail.cfm?id=3321612
 * https://quarkus.io/get-started/ 
 * https://quarkus.io/guides/kafka-guide
 * https://github.com/confluentinc/kafka-streams-examples
