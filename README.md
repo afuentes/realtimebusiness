@@ -65,3 +65,5 @@ helloworldfirst
 
 * https://quarkus.io/get-started/ 
 * https://quarkus.io/guides/kafka-guide
+* https://github.com/confluentinc/kafka-streams-examples
+
