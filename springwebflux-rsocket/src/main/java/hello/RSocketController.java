@@ -12,7 +12,7 @@ class GreetingServerController {
     public Mono<Void> hello(Greeting p) {
         return Mono.empty();
     }
-    
+
 }
 
 @Data
