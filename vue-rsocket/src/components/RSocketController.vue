@@ -64,11 +64,10 @@ export default {
     if (this.rsocket) {
         const message = { message: "fire and forget from JavaScript!" };
         this.rsocket.fireAndForget({
-              route:"hello",
               data: message,
-              metadata: ""
+              metadata: null
          });
-      
+       this.msg = "send fireAndForget Sucessfully"
     } else {
       this.msg = "fireAndForget:socket null"
     }  

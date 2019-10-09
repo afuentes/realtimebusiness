@@ -6,7 +6,6 @@ import reactor.core.publisher.Mono;
 
 //** Fire & Forget  */
 @Controller
-
 class RSocketController {   
 
     @MessageMapping("/hello")
