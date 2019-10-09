@@ -6,16 +6,13 @@ import org.springframework.stereotype.Controller;
 import lombok.Data;
 import reactor.core.publisher.Mono;
 
+//** Fire & Forget  */
 @Controller
-@MessageMapping("hello")
-class GreetingServerController {   
-    public Mono<Void> hello(Greeting p) {
+@MessageMapping("/hello")
+class RSocketController {   
+    public Mono<Void> hello(String data) {
+        System.out.println("Rsocket Message:"+data);
         return Mono.empty();
     }
 
-}
-
-@Data
-class Greeting {
-    String name;
 }
