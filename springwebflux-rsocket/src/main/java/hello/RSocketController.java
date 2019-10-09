@@ -8,9 +8,10 @@ import reactor.core.publisher.Mono;
 @Controller
 class RSocketController {   
 
-    @MessageMapping("/hello")
-    public Mono<Void> helloServer(Message message) {
-        System.out.println("Rsocket Message:"+message);
-        return Mono.empty();
+
+    @MessageMapping("hello")
+    public Mono<Message> helloServer(Message message) {
+        return Mono.just(message)
+                .map(msg -> new Message(msg.message + " | Server says hello!"));
     }
 }

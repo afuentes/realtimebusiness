@@ -4,7 +4,7 @@
     <br/>
     <span>Message: {{ msg }}</span>
     <br/>
-    <button v-on:click="fireAndForget" >fireAndForget</button>
+    <button v-on:click="requestAndResponse" >requestAndResponse</button>
     <br/>
     <div>
        
@@ -43,6 +43,7 @@ export default {
           dataMimeType: "application/json",
           // format of `metadata`
           metadataMimeType: "application/json"
+          //metadataMimeType: 'message/x.rsocket.routing.v0',
         },
         transport
       });
@@ -63,15 +64,40 @@ export default {
   fireAndForget: function(){
     if (this.rsocket) {
         const message = { message: "fire and forget from JavaScript!" };
-        this.rsocket.fireAndForget({
+        const metadata = {};
+       this.rsocket.fireAndForget({
               data: message,
-              metadata: null
+              metadata: metadata
          });
        this.msg = "send fireAndForget Sucessfully"
     } else {
       this.msg = "fireAndForget:socket null"
     }  
   }, // end fireAndForget
+  requestAndResponse: function(){
+      if (this.rsocket){
+          const message = { message: "requestResponse from JavaScript!" };
+          const metadata = {};
+          this.rsocket.requestResponse({
+               data: message,
+               metadata: metadata
+               })
+          .subscribe({
+            onComplete: data => {
+              this.msg ="Complete requestResponse:"+data
+            },
+            onError: error => {
+              this.msg = "Error requestResponse:"+error
+            },
+            onSubscribe: cancel => {
+              this.msg = "Subcribe:"+cancel
+            }
+          });
+       } else {
+            this.msg = "requestAndResponse:socket null"
+       }
+
+    } // end requestAndResponse
   } // end methods
 }
 
