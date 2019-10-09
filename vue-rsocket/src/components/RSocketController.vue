@@ -29,7 +29,7 @@ export default {
  methods: {
   connect: function(){
       const transport = new RSocketWebSocketClient({
-        url: "ws://localhost:9898"
+        url: "ws://localhost:9898/rsocket"
       });
       const client = new RSocketClient({
         // send/receive JSON objects instead of strings/buffers
@@ -64,10 +64,11 @@ export default {
     if (this.rsocket) {
         const message = { message: "fire and forget from JavaScript!" };
         this.rsocket.fireAndForget({
+              route:"hello",
               data: message,
               metadata: ""
          });
-            this.sent.push(message);
+      
     } else {
       this.msg = "fireAndForget:socket null"
     }  

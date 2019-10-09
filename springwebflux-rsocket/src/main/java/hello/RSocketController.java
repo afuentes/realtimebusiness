@@ -2,17 +2,16 @@ package hello;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
-
-import lombok.Data;
 import reactor.core.publisher.Mono;
 
 //** Fire & Forget  */
 @Controller
-@MessageMapping("/hello")
+
 class RSocketController {   
-    public Mono<Void> hello(String data) {
-        System.out.println("Rsocket Message:"+data);
+
+    @MessageMapping("/hello")
+    public Mono<Void> helloServer(Message message) {
+        System.out.println("Rsocket Message:"+message);
         return Mono.empty();
     }
-
 }
