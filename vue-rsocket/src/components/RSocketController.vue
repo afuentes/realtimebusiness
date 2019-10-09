@@ -64,7 +64,7 @@ export default {
   fireAndForget: function(){
     if (this.rsocket) {
         const message = { message: "fire and forget from JavaScript!" };
-        const metadata = {};
+        const metadata = { routing: "hello" };
        this.rsocket.fireAndForget({
               data: message,
               metadata: metadata
@@ -77,7 +77,7 @@ export default {
   requestAndResponse: function(){
       if (this.rsocket){
           const message = { message: "requestResponse from JavaScript!" };
-          const metadata = {};
+          const metadata = { routing: "hello" };
           this.rsocket.requestResponse({
                data: message,
                metadata: metadata
