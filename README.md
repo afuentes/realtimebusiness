@@ -68,7 +68,7 @@ $ mvn compile quarkus:dev
 
 Architecture in Detail of Demo
 
-![Architecture](/Kafka_detail.png)
+![Architecture](/kafka_detail.png)
 ### Reference
 
 * https://kafka.apache.org/
