@@ -66,6 +66,7 @@ $ mvn compile quarkus:dev
 
  Refresh  http://localhost:8080/prices.html, and you should see fluctuating price new interval period
 
+Architecture 
 
 ![Architecture](/Kafka_startup.png)
 ### Reference
