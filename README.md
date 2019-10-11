@@ -62,8 +62,6 @@ $ mvn compile quarkus:dev
     }
 ```
 
-Note : No rerun the maven command 
-
 6. update the Pages and validate the new interval 
 
  Refresh  http://localhost:8080/prices.html, and you should see fluctuating price new interval period
