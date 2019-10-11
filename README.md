@@ -13,7 +13,7 @@ Online Event Processing Platform
 
 2- Install toolset 
 
-```javascript
+```shell
 $ cd $HOME/toolset
 $ unzip apache-maven-3.6.2-bin.zip
 $ tar xvfz kafka_2.12-2.3.0.tar.gz  
@@ -21,7 +21,7 @@ $ tar xvfz kafka_2.12-2.3.0.tar.gz
 
 3- Enviroment Profile .bash_profile 
 
-```javascript
+```shell
 # TOOLSET 
 export TOOLSET=$HOME/toolset
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8-openj9.jdk/Contents/Home/ 
@@ -33,7 +33,7 @@ export PATH=${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${KAFKA_HOME}/bin:${PATH}
 
 2. Startup Kafka Cluster 
 
-```javascript
+```shell
 $ zookeeper-server-start.sh $KAFKA_CONFIG/zookeeper.properties
 $ kafka-server-start.sh $KAFKA_CONFIG/server.properties
 ```
@@ -41,7 +41,7 @@ Note:  open different terminal for each process
 
 3.  Develop example 
 
-```javascript
+```shell
 $ cd $HOME
 $ git clone 
 ```
