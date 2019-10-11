@@ -39,11 +39,11 @@ $ kafka-server-start.sh $KAFKA_CONFIG/server.properties
 ```
 Note:  open different terminal for each process 
 
-3.  Develop example 
+3. Download Code & Run  
 
 ```shell
 $ cd $HOME
-$ git clone 
+$ git clone  
 ```
 
 Modified the return String into method hello
@@ -57,8 +57,8 @@ Modified the return String into method hello
 ```
 validate the modify code 
 
-```javascript
-curl http://localhost:8080/greeting
+```shell
+$ git clone url http://localhost:8080/greeting
 helloworldfirst
 ```
 **Note**: quarkus:dev enables hot deployment with background compilation, which means that when you modify your Java files or your resource files and refresh your browser these changes will automatically take effect. 
