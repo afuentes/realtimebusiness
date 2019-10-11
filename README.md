@@ -43,30 +43,30 @@ Note:  open different terminal for each process
 
 ```shell
 $ cd $HOME
-$ git clone  
+$ git clone  https://github.com/afuentes/realtimebusiness.git
+$ cd  realtimebusiness/kafka-quickstart
+$ mvn compile quarkus:dev
 ```
 
-Modified the return String into method hello
+4. Verified the example is Running 
+
+ open your browser to http://localhost:8080/prices.html, and you should see a fluctuating price.
+
+5. Changed de interval from 5 to 2 in PriceGenerator.java using reload quarkus features 
 
 ```java
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "helloworldfirst\n";
+    @Outgoing("generated-price")
+    public Flowable<Integer> generate() {
+        return Flowable.interval(2, TimeUnit.SECONDS)
+                .map(tick -> random.nextInt(100));
     }
 ```
-validate the modify code 
 
-```shell
-$ git clone url http://localhost:8080/greeting
-helloworldfirst
-```
-**Note**: quarkus:dev enables hot deployment with background compilation, which means that when you modify your Java files or your resource files and refresh your browser these changes will automatically take effect. 
+Note : No rerun the maven command 
 
+6. update the Pages and validate the new interval 
 
-## Develop Real Time Demo 
-
-4. Develop a Simple Application 
+ Refresh  http://localhost:8080/prices.html, and you should see fluctuating price new interval period
 
 ### Reference
 * https://kafka.apache.org/
