@@ -66,7 +66,7 @@ $ mvn compile quarkus:dev
 
  Refresh  http://localhost:8080/prices.html, and you should see fluctuating price new interval period
 
-Architecture 
+Architecture in Detail of Kafka Guide & Reactive Messaging 
 
 ![Architecture](/Kafka_startup.png)
 ### Reference
@@ -75,5 +75,6 @@ Architecture
 * https://quarkus.io/get-started/ 
 * https://quarkus.io/guides
 * https://quarkus.io/guides/kafka-guide
+* https://smallrye.io/smallrye-reactive-messaging/
 
 
