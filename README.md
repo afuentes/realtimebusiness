@@ -69,9 +69,8 @@ Note : No rerun the maven command
  Refresh  http://localhost:8080/prices.html, and you should see fluctuating price new interval period
 
 ### Reference
+
 * https://kafka.apache.org/
-* https://queue.acm.org/detail.cfm?id=3321612
 * https://quarkus.io/get-started/ 
-* https://quarkus.io/guides/kafka-guide
-* https://github.com/confluentinc/kafka-streams-examples
+* https://quarkus.io/guides
 
