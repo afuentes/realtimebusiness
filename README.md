@@ -53,7 +53,7 @@ $ mvn compile quarkus:dev
 
  open your browser to http://localhost:8080/prices.html, and you should see a fluctuating price.
 
-5. Changed de interval from 5 to 2 in PriceGenerator.java using reload quarkus features 
+5. Changed de interval from 5 to 2 in PriceGenerator.java  
 
 ```java
     @Outgoing("generated-price")
@@ -63,7 +63,7 @@ $ mvn compile quarkus:dev
     }
 ```
 
-6. update the Pages and validate the new interval 
+6. Using reload quarkus features update page and validate the new interval 
 
  Refresh  http://localhost:8080/prices.html, and you should see fluctuating price new interval period
 
