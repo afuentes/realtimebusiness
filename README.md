@@ -11,14 +11,15 @@ Online Event Processing Platform
 * Maven from https://maven.apache.org/
 * Kafka from https://kafka.apache.org/downloads
 
-2- Install toolset 
+2- Install mavan + kafka  
 
 ```shell
 $ cd $HOME/toolset
 $ unzip apache-maven-3.6.2-bin.zip
 $ tar xvfz kafka_2.12-2.3.0.tar.gz  
 ```
-
+Note : Java was installed using .dmg file
+ 
 3- Enviroment Profile .bash_profile 
 
 ```shell
