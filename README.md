@@ -11,7 +11,7 @@ Online Event Processing Platform
 * Maven from https://maven.apache.org/
 * Kafka from https://kafka.apache.org/downloads
 
-2- Install mavan + kafka  
+2- Install maven + kafka  
 
 ```shell
 $ cd $HOME/toolset
