@@ -70,6 +70,10 @@ $ mvn compile quarkus:dev
 Architecture with Detail of Component 
 
 ![Architecture](/kafka_detail.png)
+
+
+7. Comming Soon ... 
+
 ### Reference
 
 * https://kafka.apache.org/
