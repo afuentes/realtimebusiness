@@ -27,6 +27,7 @@ $ mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
 MQTTExplorer Detail 
 
 ![MQTTServer Connection ](/MQTTExplorer11.png)
+
 ![MQTTServer Explorer ](/MQTTExplorer12.png)
 
 ### Reference
