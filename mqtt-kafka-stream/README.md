@@ -25,7 +25,7 @@ $ mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
 # Validate MQTT Server 
 
 ![MQTTServer Connection ](/MQTTExplorer11.png)
-![MQTTServer Explorer ](/MQTTExplorer11.png)
+![MQTTServer Explorer ](/MQTTExplorer12.png)
 
 ### Reference
 
