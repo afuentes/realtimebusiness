@@ -32,6 +32,25 @@ Install MQTTExplorer & Run
 
 ![MQTTServer Explorer ](MQTTExplorer12.png)
 
+4- Create Topic and Publish Message usgin MQTTExplorer 
+
+```shell
+$ mosquitto_sub -V mqttv5 -t sensors/drone01/altitude -d
+Client (null) sending CONNECT
+Client auto-9C02B3F0-F0E8-BA0B-D111-4F1588B59637 received CONNACK (0)
+Client auto-9C02B3F0-F0E8-BA0B-D111-4F1588B59637 sending SUBSCRIBE (Mid: 1, Topic: sensors/drone01/altitude, QoS: 0, Options: 0x00)
+Client auto-9C02B3F0-F0E8-BA0B-D111-4F1588B59637 received SUBACK
+Subscribed (mid: 1): 0
+Client auto-9C02B3F0-F0E8-BA0B-D111-4F1588B59637 received PUBLISH (d0, q0, r0, m0, 'sensors/drone01/altitude', ... (12 bytes))
+{data= '01'}
+Client auto-9C02B3F0-F0E8-BA0B-D111-4F1588B59637 received PUBLISH (d0, q0, r0, m0, 'sensors/drone01/altitude', ... (12 bytes))
+{data= '02'}
+```
+
+Note : Using MQTTExplorer to Publish Message in sensors/drone01/altitude  
+
+
+
 ### Reference
 
 * https://mosquitto.org
