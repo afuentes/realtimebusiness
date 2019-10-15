@@ -18,6 +18,11 @@ $ brew install mosquitto
 
 ```shell
 $ mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
+1571104326: mosquitto version 1.6.7 starting
+1571104326: Config loaded from /usr/local/etc/mosquitto/mosquitto.conf.
+1571104326: Opening ipv6 listen socket on port 1883.
+1571104326: Opening ipv4 listen socket on port 1883.
+
 ```
 
 
