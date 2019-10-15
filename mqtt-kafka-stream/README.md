@@ -2,6 +2,8 @@
 
 Online Event Processing Platform
 
+## Prepared Enviroment
+
 1- Download Mosquitto 
 
 * Mosquitto from https://mosquitto.org/download/
@@ -22,7 +24,7 @@ $ mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
 1571104326: Opening ipv4 listen socket on port 1883.
 ```
 
-# Validate MQTT Server 
+## Validate MQTT Server 
 
 MQTTExplorer Detail 
 
