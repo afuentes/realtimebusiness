@@ -24,9 +24,9 @@ $ mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
 1571104326: Opening ipv4 listen socket on port 1883.
 ```
 
-## Validate MQTT Server 
+## Validate MQTT Server Running  
 
-MQTTExplorer Detail 
+Install MQTTExplorer & Run 
 
 ![MQTTServer Connection ](MQTTExplorer11.png)
 
