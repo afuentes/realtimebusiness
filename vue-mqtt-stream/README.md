@@ -30,8 +30,15 @@ npm run test
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 https://github.com/eclipse/paho.mqtt.javascript
+
+### Reference
+
+* https://mosquitto.org
+* http://mqtt-explorer.com/
+* https://github.com/eclipse/paho.mqtt.javascript
+
+
+
