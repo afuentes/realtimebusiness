@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import * as MQTT from '@/paho-mqtt.js'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
