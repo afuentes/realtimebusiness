@@ -1,6 +1,11 @@
 <template>
-  <div id="app">
-    <div>Mesage: {{msg}}</div>
+  <div id="app">  
+    <button v-on:click="onMessage">Send</button>
+    <div>connMessage:{{connMessage}}</div>
+    <div>onMessage:{{message}}</div>
+    <div>onPresence:{{presence}}</div>
+    <div>onPing:{{ping}}</div>
+
   </div>
 </template>
 
@@ -15,13 +20,9 @@ export default {
   },
   data () {
     return {
-      ownMessage:"",
-      message:"",
-      presence:"",
-      ping:"",
       hostnme: "localhost",
-      port: "8989",
-      clientId:null,
+      port: "1883",
+      clientId:"wertwetew",
       conmqtt:null,
       topic:"/test/topic",
     }
@@ -33,10 +34,12 @@ export default {
     // set callback handlers
     this.conmqtt.onConnectionLost = this.onConnectionLost;
     this.conmqtt.onMessageArrived = this.onMessageArrived;
+    this.conmqtt.subscribe(this.topic);
+    this.connMessage = "Connect Sucessfully"
+
 
   },methods: {
-     onConnect: function(){
-        this.conmqtt.subscribe("/test/topic");
+     onMessage: function(){
         message = new Paho.MQTT.Message("Hello");
         message.destinationName = this.topic;
         this.conmqtt.send(message);
