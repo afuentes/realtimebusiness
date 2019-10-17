@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+      <button @click="onConnect">Connect</button>
       <div>Connect:{{isOk}}</div>  
     <div>
        <button @click="onSubscribe">Subsribe on Topic</button>
@@ -30,9 +31,10 @@ export default {
     }
   },
   mounted: function() {
-       
-       this.client = connect('ws://localhost:9001/ws', {clientId: 'WebClient-' + parseInt(Math.random() * 100000)})
 
+  },methods: {
+     onConnect: function(){
+      this.client = connect('ws://localhost:9001/ws', {clientId: 'WebClient-' + parseInt(Math.random() * 100000)})
        if(this.client){
          this.isOk = "Connect OK"
        }else {
@@ -40,7 +42,7 @@ export default {
        }
        this.client.on("message", this.onEventHandler)
 
-  },methods: {
+     },
      onPublish: function(){
         this.client.publish(this.topic, "message send "+ this.value++)
         this.status = "Publish Message OK"
@@ -51,7 +53,7 @@ export default {
          this.status = "Subscribe OK"
      },
      onEventHandler: function(topic, msg){
-          this.status = "Notified from Business- topic:" + topic +" msg:"+ msg
+          this.NotifiedMessage = "Notified from Business- topic:" + topic +" msg:"+ msg
      }
   } // end methods
 }
