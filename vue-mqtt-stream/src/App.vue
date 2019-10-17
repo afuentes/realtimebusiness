@@ -1,9 +1,19 @@
 <template>
-  <div id="app">  
-    <button v-on:click="onConnect">Connect</button>
+  <div id="app">
+      <div>Connect:{{isOk}}</div>  
+    <div>
+       <button @click="onSubscribe">Subsribe on Topic</button>
+       <br>
+       <button @click="onPublish">Publish on Topic</button>
+    </div>
+        <div>Status:{{status}}</div>
+    <div>
+        <div>Notified:{{NotifiedMessage}}</div>
+    </div>
   </div>
 </template>
 <script>
+import { connect } from 'mqtt';
 
 export default {
   name: 'app',
@@ -11,38 +21,38 @@ export default {
   },
   data () {
     return {
-
+     isOk: "",
+     topic:"mqtt/demo",
+     status: "",
+     NotifiedMessage: "waiting for message",
+     client: null,
+     value: 1
     }
   },
   mounted: function() {
+       
+       this.client = connect('ws://localhost:9001/ws', {clientId: 'WebClient-' + parseInt(Math.random() * 100000)})
+
+       if(this.client){
+         this.isOk = "Connect OK"
+       }else {
+         this.isOk = "Connect FAIL"
+       }
+       this.client.on("message", this.onEventHandler)
 
   },methods: {
-     onConnect: function(){
-       
-        // connect the client 
-      // this.conmqtt.connect({onSuccess:this.onConnect});
-        // set callback handlers
-        //this.conmqtt.onConnectionLost = this.onConnectionLost;
-        //this.conmqtt.onMessageArrived = this.onMessageArrived;
-       //  this.conmqtt.subscribe(this.topic);
-     },
-     onMessageHandler: function(){
-       /*
-        var  message = new Paho.MQTT.Message("Hello");
-        message.destinationName = this.topic;
-        this.conmqtt.send(message);
-        */
-        this.connMessage = "onMessageHandler"
-     },
-     onMessageArrivedHandler: function(){
+     onPublish: function(){
+        this.client.publish(this.topic, "message send "+ this.value++)
+        this.status = "Publish Message OK"
 
-       this.connMessage = "onMessageArrived"
      },
-     onConnectionLostHandler: function(){
-
-       this.connMessage = "onConnectionLost"
+     onSubscribe: function(){
+         this.client.subscribe(this.topic)
+         this.status = "Subscribe OK"
+     },
+     onEventHandler: function(topic, msg){
+          this.status = "Notified from Business- topic:" + topic +" msg:"+ msg
      }
-
   } // end methods
 }
 

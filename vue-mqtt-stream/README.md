@@ -14,7 +14,7 @@ Validated if App is running
 
 ```shell
 $ cd vue-mqtt-stream
-$ npm install vue-mqtt --save
+$ npm install mqtt --save
 ```
 
 ### Active websocket in mosquitto ( Restart Mosquitto Server )
@@ -57,7 +57,7 @@ https://github.com/eclipse/paho.mqtt.javascript
 
 * https://mosquitto.org
 * http://mqtt-explorer.com/
-* https://github.com/nik-zp/Vue-Mqtt-Example
 * https://github.com/eclipse/paho.mqtt.javascript
+* https://github.com/mqttjs/MQTT.js
 
 
