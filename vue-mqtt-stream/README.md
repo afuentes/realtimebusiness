@@ -13,8 +13,8 @@ Validated if App is running
 ### Add MQTT Javascript Client 
 
 ```shell
-$ cd src 
-$ wget https://raw.githubusercontent.com/eclipse/paho.mqtt.javascript/master/src/paho-mqtt.js
+$ cd vue-mqtt-stream
+$ npm install vue-mqtt --save
 ```
 
 ### Compiles and minifies for production
@@ -40,7 +40,7 @@ https://github.com/eclipse/paho.mqtt.javascript
 
 * https://mosquitto.org
 * http://mqtt-explorer.com/
+* https://github.com/nik-zp/Vue-Mqtt-Example
 * https://github.com/eclipse/paho.mqtt.javascript
-f fcr
 
 

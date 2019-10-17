@@ -18,7 +18,9 @@ export default {
 
   },methods: {
      onConnect: function(){
-       this.conmqtt = new this.$mqtt.MQTT.Client(this.hostname, Number(this.port), this.clientId);
+       
+       this.conmqtt = new this.$mqtt.('localhost', Number('8989'), '32453253252354');
+        Vue.use(VueMqtt, 'ws://iot.eclipse.org/ws', options);
         // connect the client 
       // this.conmqtt.connect({onSuccess:this.onConnect});
         // set callback handlers
