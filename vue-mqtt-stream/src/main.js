@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueMqtt from 'vue-mqtt'
 
-Vue.use(VueMqtt, 'ws://localhost:80/ws', {clientId: 'WebClient-' + parseInt(Math.random() * 100000)})
+Vue.use(VueMqtt, 'ws://localhost:1883/ws', {clientId: 'WebClient-' + parseInt(Math.random() * 100000)})
 
 Vue.config.productionTip = false
 
