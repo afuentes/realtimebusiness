@@ -1,86 +1,51 @@
 <template>
   <div id="app">  
-    <button v-on:click="onMessage">Send</button>
-    <div>connMessage:{{connMessage}}</div>
-    <div>onMessage:{{message}}</div>
-    <div>onPresence:{{presence}}</div>
-    <div>onPing:{{ping}}</div>
-
+    <button v-on:click="onConnect">Connect</button>
   </div>
 </template>
-
 <script>
-import * as MQTT from '@/paho-mqtt.js'
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
   },
   data () {
     return {
-      hostnme: "localhost",
-      port: "1883",
-      clientId:"wertwetew",
-      conmqtt:null,
-      topic:"/test/topic",
+
     }
   },
   mounted: function() {
-    this.conmqtt = new MQTT.Paho.MQTT.Client(this.hostnme, Number(this.port), this.clientId);
-    // connect the client 
-    this.conmqtt.connect({onSuccess:this.onConnect});
-    // set callback handlers
-    this.conmqtt.onConnectionLost = this.onConnectionLost;
-    this.conmqtt.onMessageArrived = this.onMessageArrived;
-    this.conmqtt.subscribe(this.topic);
-    this.connMessage = "Connect Sucessfully"
-
 
   },methods: {
-     onMessage: function(){
-        message = new Paho.MQTT.Message("Hello");
+     onConnect: function(){
+       this.conmqtt = new this.$mqtt.MQTT.Client(this.hostname, Number(this.port), this.clientId);
+        // connect the client 
+      // this.conmqtt.connect({onSuccess:this.onConnect});
+        // set callback handlers
+        //this.conmqtt.onConnectionLost = this.onConnectionLost;
+        //this.conmqtt.onMessageArrived = this.onMessageArrived;
+       //  this.conmqtt.subscribe(this.topic);
+     },
+     onMessageHandler: function(){
+       /*
+        var  message = new Paho.MQTT.Message("Hello");
         message.destinationName = this.topic;
         this.conmqtt.send(message);
+        */
+        this.connMessage = "onMessageHandler"
      },
-     onMessageArrived: function(){
+     onMessageArrivedHandler: function(){
 
+       this.connMessage = "onMessageArrived"
      },
-     onConnectionLost: function(){
+     onConnectionLostHandler: function(){
 
+       this.connMessage = "onConnectionLost"
      }
 
-  },
+  } // end methods
 }
 
-
-
-// connect the client
-conmqtt.connect({onSuccess:onConnect});
-
-
-// called when the client connects
-function onConnect() {
-  // Once a connection has been made, make a subscription and send a message.
-  console.log("onConnect");
-  client.subscribe("World");
-  message = new Paho.MQTT.Message("Hello");
-  message.destinationName = "World";
-  client.send(message);
-}
-
-// called when the client loses its connection
-function onConnectionLost(responseObject) {
-  if (responseObject.errorCode !== 0) {
-    console.log("onConnectionLost:"+responseObject.errorMessage);
-  }
-}
-
-// called when a message arrives
-function onMessageArrived(message) {
-  console.log("onMessageArrived:"+message.payloadString);
-}
 
 </script>
 
