@@ -17,12 +17,29 @@ $ cd vue-mqtt-stream
 $ npm install vue-mqtt --save
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+### Active websocket in mosquitto ( Restart Mosquitto Server )
+```shell
+$ vi cp /usr/local/etc/mosquitto/mosquitto.conf /usr/local/etc/mosquitto/mosquitto.conf.bk
+$ vi /usr/local/etc/mosquitto/mosquitto.conf
 ```
 
-### Run your tests
+Add the following lines in the "Default Listener" section:
+
+```
+port 1883
+listener 9001
+protocol websockets
+```
+Validate 
+
+```shell
+mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
+1571320919: mosquitto version 1.6.7 starting
+1571320919: Config loaded from /usr/local/etc/mosquitto/mosquitto.conf.
+1571320919: Opening websockets listen socket on port 9001.
+```
+
+### 
 ```
 npm run test
 ```
