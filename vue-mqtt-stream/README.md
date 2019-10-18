@@ -59,6 +59,8 @@ https://github.com/eclipse/paho.mqtt.javascript
 * http://mqtt-explorer.com/
 * https://github.com/eclipse/paho.mqtt.javascript
 * https://github.com/mqttjs/MQTT.js
-* https://github.com/BrockReece/vue-heatmapjs
+* https://d3js.org/
+
+
 
 
