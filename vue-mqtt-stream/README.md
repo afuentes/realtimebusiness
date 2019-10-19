@@ -39,6 +39,16 @@ mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
 1571320919: Opening websockets listen socket on port 9001.
 ```
 
+### Add D3.js library to create heatmap tracking 
+
+```shell
+$ npm i --save d3
+```
+
+### Demo 
+
+
+
 ### Reference
 
 * https://mosquitto.org
