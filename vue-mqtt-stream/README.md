@@ -39,20 +39,6 @@ mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
 1571320919: Opening websockets listen socket on port 9001.
 ```
 
-### 
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-
-
-https://github.com/eclipse/paho.mqtt.javascript
-
 ### Reference
 
 * https://mosquitto.org
