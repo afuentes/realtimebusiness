@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-      <button @click="onConnect">Connect</button>
-      <div>Connect:{{isOk}}</div>  
-    <div>
-       <button @click="onSubscribe">Subsribe on Topic</button>
-       <br>
-       <button @click="onPublish">Publish on Topic</button>
-    </div>
-        <div>Status:{{status}}</div>
-    <div>
-        <div>Notified:{{NotifiedMessage}}</div>
-    </div>
+      <button @click="onConnectClient">Connect Client & Subscribe </button>
+      <br/>
+      <button @click="onConnectServer">Connect Server & Subscribe </button>
+      <div>
+           <span> Connect:{{isOk}}</span> 
+      </div>  
+
+      <div v-if="isClient" class="client"  v-on:mousemove="onMouseMove" >
+           {{this.coordClient}}
+      </div>
+      <div v-else class="server"  v-on:mousemove="onMouseMove" >
+           {{this.coordServer}}
+      </div>
   </div>
 </template>
 <script>
@@ -22,18 +24,20 @@ export default {
   },
   data () {
     return {
-     isOk: "",
+     isClient: true,
+     isOk: "Disconnect",
      topic:"mqtt/demo",
      status: "",
-     NotifiedMessage: "waiting for message",
      client: null,
-     value: 1
+     value: 1,
+     coordClient: {},
+     coordServer: {}
     }
   },
   mounted: function() {
 
   },methods: {
-     onConnect: function(){
+     onConnectClient: function(){
       this.client = connect('ws://localhost:9001/ws', {clientId: 'WebClient-' + parseInt(Math.random() * 100000)})
        if(this.client){
          this.isOk = "Connect OK"
@@ -41,20 +45,36 @@ export default {
          this.isOk = "Connect FAIL"
        }
        this.client.on("message", this.onEventHandler)
-
+       this.client.subscribe(this.topic)
+       this.isOk = "Connect OK & Subscribe"
+     },
+     onConnectServer: function(){
+      this.isClient = false
+      this.client = connect('ws://localhost:9001/ws', {clientId: 'WebClient-' + parseInt(Math.random() * 100000)})
+       if(this.client){
+         this.isOk = "Connect OK"
+       }else {
+         this.isOk = "Connect FAIL"
+       }
+       this.client.on("message", this.onEventHandler)
+       this.client.subscribe(this.topic)
+       this.isOk = "Connect to Server OK & Subscribe"
      },
      onPublish: function(){
         this.client.publish(this.topic, "message send "+ this.value++)
-        this.status = "Publish Message OK"
-
      },
      onSubscribe: function(){
          this.client.subscribe(this.topic)
-         this.status = "Subscribe OK"
      },
      onEventHandler: function(topic, msg){
-          this.NotifiedMessage = "Notified from Business- topic:" + topic +" msg:"+ msg
+          this.coordServer = msg
+     },
+     onMouseMove: function(event){
+       
+       this.coordClient= "{" +event.offsetX +"," +  event.offsetY + "}"
+       this.client.publish(this.topic,this.coordClient)
      }
+
   } // end methods
 }
 
@@ -69,5 +89,20 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.client {
+  height: 400px;
+  width:  400px;
+  background-color: powderblue;
+  margin:0 auto;
+}
+
+
+.server {
+  height: 400px;
+  width:  400px;
+  background-color: rgb(116, 26, 26);
+  margin:0 auto;
 }
 </style>
