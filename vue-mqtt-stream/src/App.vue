@@ -11,7 +11,9 @@
            {{this.coordClient}}
       </div>
       <div v-else >
-          <svg style="width:500px; height:500px; border:1px lightgray solid;"/>
+          {{this.coordServer}}
+          <br/>
+          <svg style="width:400px; height:400px; border:1px lightgray solid;"/>
       </div>
   </div>
 </template>
@@ -31,8 +33,8 @@ export default {
      status: "",
      client: null,
      value: 1,
-     coordClient: {},
-     coordServer: {}
+     coordClient: { x:0,y:0 },
+     coordServer: { x:0,y:0 }
     }
   },
   mounted: function() {
@@ -45,8 +47,6 @@ export default {
        }else {
          this.isOk = "Connect FAIL"
        }
-       this.client.on("message", this.onEventHandler)
-       this.client.subscribe(this.topic)
        this.isOk = "Connect Client OK & Subscribe"
      },
      onConnectServer: function(){
@@ -60,23 +60,22 @@ export default {
        this.client.on("message", this.onEventHandler)
        this.client.subscribe(this.topic)
        this.isOk = "Connect to Server OK & Subscribe"
-        d3.select("containersvg")
-          .append("svg").attr("width", 400).attr("height", 400).style("background", "red")
 
      },
-     onPublish: function(){
-        this.client.publish(this.topic, "message send "+ this.value++)
+     onPublish: function(event){
+        this.client.publish(this.topic,JSON.stringify(event))
      },
      onSubscribe: function(){
          this.client.subscribe(this.topic)
      },
      onEventHandler: function(topic, msg){
-          this.coordServer = msg
+          this.coordServer = JSON.parse(msg.toString())
+            d3.select("svg").append("circle").attr("cx",this.coordServer.x).attr("cy",this.coordServer.y).attr("r","1");
      },
      onMouseMove: function(event){
-       
-       this.coordClient= "{" +event.offsetX +"," +  event.offsetY + "}"
-       this.client.publish(this.topic,this.coordClient)
+       this.coordClient.x =event.offsetX 
+       this.coordClient.y =event.offsetY
+       this.onPublish(this.coordClient)
      }
 
   } // end methods
