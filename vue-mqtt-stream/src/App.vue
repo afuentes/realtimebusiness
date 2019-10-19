@@ -10,13 +10,14 @@
       <div v-if="isClient" class="client"  v-on:mousemove="onMouseMove" >
            {{this.coordClient}}
       </div>
-      <div v-else class="server"  v-on:mousemove="onMouseMove" >
-           {{this.coordServer}}
+      <div v-else >
+          <svg style="width:500px; height:500px; border:1px lightgray solid;"/>
       </div>
   </div>
 </template>
 <script>
 import { connect } from 'mqtt';
+import * as d3 from 'd3'
 
 export default {
   name: 'app',
@@ -59,6 +60,9 @@ export default {
        this.client.on("message", this.onEventHandler)
        this.client.subscribe(this.topic)
        this.isOk = "Connect to Server OK & Subscribe"
+        d3.select("containersvg")
+          .append("svg").attr("width", 400).attr("height", 400).style("background", "red")
+
      },
      onPublish: function(){
         this.client.publish(this.topic, "message send "+ this.value++)
@@ -102,7 +106,6 @@ export default {
 .server {
   height: 400px;
   width:  400px;
-  background-color: rgb(116, 26, 26);
   margin:0 auto;
 }
 </style>

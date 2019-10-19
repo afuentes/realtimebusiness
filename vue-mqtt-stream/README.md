@@ -42,7 +42,8 @@ mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
 ### Add D3.js library to create heatmap tracking 
 
 ```shell
-$ npm i --save d3
+$ $ npm i --save d3
++ d3@5.12.0
 ```
 
 ### Demo 
