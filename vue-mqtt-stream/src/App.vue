@@ -46,7 +46,7 @@ export default {
        }
        this.client.on("message", this.onEventHandler)
        this.client.subscribe(this.topic)
-       this.isOk = "Connect OK & Subscribe"
+       this.isOk = "Connect Client OK & Subscribe"
      },
      onConnectServer: function(){
       this.isClient = false
