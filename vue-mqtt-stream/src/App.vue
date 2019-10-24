@@ -13,9 +13,9 @@
         <div v-else >
           {{this.coordServer}}
           <br/>
-          <h2>Mouse Tracking</h2>
+          <h3>Mouse Tracking</h3>
           <svg style="width:400px; height:400px; border:1px lightgray solid;"/>
-          <h2>Mouse Tracking</h2>
+          <OnlineUserChart/>
         </div>
       </div> <!-- close show --> 
   </div>
@@ -23,10 +23,12 @@
 <script>
 import { connect } from 'mqtt';
 import * as d3 from 'd3'
+import OnlineUserChart from '@/components/OnlineUserChart.vue'
 
 export default {
   name: 'app',
   components: {
+    OnlineUserChart
   },
   data () {
     return {
@@ -97,7 +99,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 2px;
 }
 
 .client {

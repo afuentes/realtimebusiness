@@ -1,11 +1,9 @@
 <template>
   <div>
-    <h2>Mouse Tracking</h2>
+    <h3>Online User</h3>
   </div>
 </template>
 <script>
-import { connect } from 'mqtt';
-import * as d3 from 'd3'
 
 export default {
   name: 'OnlineUserChart',
