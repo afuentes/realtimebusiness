@@ -70,7 +70,7 @@ export default {
      },
      onEventHandler: function(topic, msg){
           this.coordServer = JSON.parse(msg.toString())
-            d3.select("svg").append("circle").attr("cx",this.coordServer.x).attr("cy",this.coordServer.y).attr("r","1");
+            d3.select("svg").append("circle").attr("cx",this.coordServer.x).attr("cy",this.coordServer.y).attr("r","2");
      },
      onMouseMove: function(event){
        this.coordClient.x =event.offsetX 
