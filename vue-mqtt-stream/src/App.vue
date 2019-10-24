@@ -15,6 +15,7 @@
           <br/>
           <h2>Mouse Tracking</h2>
           <svg style="width:400px; height:400px; border:1px lightgray solid;"/>
+          <h2>Mouse Tracking</h2>
         </div>
       </div> <!-- close show --> 
   </div>
