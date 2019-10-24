@@ -13,6 +13,7 @@
         <div v-else >
           {{this.coordServer}}
           <br/>
+          <h2>Mouse Tracking</h2>
           <svg style="width:400px; height:400px; border:1px lightgray solid;"/>
         </div>
       </div> <!-- close show --> 
