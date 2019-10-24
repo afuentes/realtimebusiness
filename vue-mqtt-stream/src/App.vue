@@ -6,15 +6,16 @@
       <div>
            <span> Connect:{{isOk}}</span> 
       </div>  
-
-      <div v-if="isClient" class="client"  v-on:mousemove="onMouseMove" >
+      <div v-show="isShow" >
+        <div v-if="isClient" class="client"  v-on:mousemove="onMouseMove" >
            {{this.coordClient}}
-      </div>
-      <div v-else >
+        </div>
+        <div v-else >
           {{this.coordServer}}
           <br/>
           <svg style="width:400px; height:400px; border:1px lightgray solid;"/>
-      </div>
+        </div>
+      </div> <!-- close show --> 
   </div>
 </template>
 <script>
@@ -27,6 +28,7 @@ export default {
   },
   data () {
     return {
+     isShow:false,
      isClient: true,
      isOk: "Disconnect",
      topic:"mqtt/demo",
@@ -41,6 +43,7 @@ export default {
 
   },methods: {
      onConnectClient: function(){
+      this.isShow=true;
       this.client = connect('ws://localhost:9001/ws', {clientId: 'WebClient-' + parseInt(Math.random() * 100000)})
        if(this.client){
          this.isOk = "Connect OK"
@@ -50,6 +53,7 @@ export default {
        this.isOk = "Connect Client OK & Subscribe"
      },
      onConnectServer: function(){
+      this.isShow=true;
       this.isClient = false
       this.client = connect('ws://localhost:9001/ws', {clientId: 'WebClient-' + parseInt(Math.random() * 100000)})
        if(this.client){
