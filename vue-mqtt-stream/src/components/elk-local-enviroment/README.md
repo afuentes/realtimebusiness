@@ -12,7 +12,9 @@
 2- Configure ElasticSearch 
 
 ```shell
-$ ...
+$ cd toolset
+$ gunzip xvfz elasticsearch-7.4.1-no-jdk-darwin-x86_64.tar.gz
+
 ```
 
 Note : bla bla 
