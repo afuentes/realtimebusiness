@@ -41,7 +41,34 @@ $  curl http://localhost:9200/
 }
 ```
 
+ElasticSearch Cluster Detail 
+
+```shell
+$ curl -X GET "localhost:9200/_cat/health?v&pretty"
+epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
+1572296709 21:05:09  elasticsearch green 
+```
+
+
 Note : using OpenJDK11U
+
+3- Create a document 
+
+```shell
+$ curl -X POST -H "Content-Type: application/json"  -i http://localhost:9200/mkyong/posts/1002 --data '{
+  "title": "Java 8 Optional In Depth",
+  "category":"Java",
+  "published_date":"23-FEB-2017",
+  "author":"Rambabu Posa"
+}'
+HTTP/1.1 201 Created
+Location: /mkyong/posts/1002
+Warning: 299 Elasticsearch-7.4.1-fc0eeb6e2c25915d63d871d344e3d0b45ea0ea1e "[types removal] Specifying types in document index requests is deprecated, use the typeless endpoints instead (/{index}/_doc/{id}, /{index}/_doc, or /{index}/_create/{id})."
+content-type: application/json; charset=UTF-8
+content-length: 158
+
+{"_index":"mkyong","_type":"posts","_id":"1002","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
+```
 
 2- Configure Kibana 
 
