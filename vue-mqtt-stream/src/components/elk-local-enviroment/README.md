@@ -89,13 +89,18 @@ content-length: 354
 2- Configure Kibana 
 
 ```shell
-$ ...
+$ cd toolset 
+$ tar xvfz kibana-7.4.1-darwin-x86_64.tar.gz
+$ ./kibana-7.4.1-darwin-x86_64/bin/kibana 
 ```
+Open browser using http://localhost:5601  
+
 
 ### Reference
 
 * https://www.elastic.co
 * https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started.html
+* https://www.elastic.co/downloads/kibana
 
 
 
