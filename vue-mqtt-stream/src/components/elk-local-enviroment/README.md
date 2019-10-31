@@ -70,6 +70,22 @@ content-length: 158
 {"_index":"mkyong","_type":"posts","_id":"1002","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
 ```
 
+Searh by document 
+
+```shell
+curl -X GET -i http://localhost:9200/mkyong/posts/_search?q=_id:1003
+HTTP/1.1 200 OK
+Warning: 299 Elasticsearch-7.4.1-fc0eeb6e2c25915d63d871d344e3d0b45ea0ea1e "[types removal] Specifying types in search requests is deprecated."
+content-type: application/json; charset=UTF-8
+content-length: 354
+
+{"took":2,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":1,"relation":"eq"},"max_score":1.0,"hits":[{"_index":"mkyong","_type":"posts","_id":"1003","_score":1.0,"_source":{
+  "title": "Java 8 Optional In Depth",
+  "category":"Java",
+  "published_date":"23-FEB-2017",
+  "author":"Rambabu Posa"
+```
+
 2- Configure Kibana 
 
 ```shell
