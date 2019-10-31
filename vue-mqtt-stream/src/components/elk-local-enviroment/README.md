@@ -93,8 +93,12 @@ $ cd toolset
 $ tar xvfz kibana-7.4.1-darwin-x86_64.tar.gz
 $ ./kibana-7.4.1-darwin-x86_64/bin/kibana 
 ```
-Open browser using http://localhost:5601  
 
+Note : 
+Open config/kibana.yml in an editor 
+Set elasticsearch.hosts to point at your Elasticsearch instance 
+Open browser using http://localhost:5601  
+    
 
 ### Reference
 
